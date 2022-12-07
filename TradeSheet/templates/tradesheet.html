@@ -88,12 +88,14 @@
       <input type="text" class="form-control" placeholder="Buy Price" name="buy_price">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="No. Of Shares" name="no_of_shares">
+      <input type="text" class="form-control" placeholder="Quantity" name="no_of_shares">
     </div>
     <div class="col">
       <input type="text" class="form-control" placeholder="Sell Price" name="sell_price">
     </div>
-    
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Notes" name="notes">
+    </div>
     <button type="submit" class="btn btn-primary">Add Trade</button>
   </div>
   
@@ -106,13 +108,14 @@
 <table class="table table-hover table-striped navbar-center" style = "width: 95%;">
     <thead class="table-dark">
       <tr>
-        <th scope="col">Id</th>
+      
         <th scope="col">Date</th>
-        <th scope="col">Symbol</th>
+        <th scope="col">Name/Symbol</th>
+        <th scope="col">Quantity</th>
         <th scope="col">Buy Price</th>
-        <th scope="col">No. of shares</th>
         <th scope="col">Sell Price</th>
         <th scope="col">Profit/Loss</th>
+        <th scope="col">Notes</th>
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
       </tr>
@@ -124,11 +127,12 @@
             <tr>
             {% comment %} <td>{{i.id}}</td> {% endcomment %}
             <td>{{i.date}}</td>
-            <td>{{i.symbol}}</td>
-            <td>{{i.buy_price}}</td>
+            <td>{{i.symbol}}</td>            
             <td>{{i.no_of_shares}}</td>
+            <td>{{i.buy_price}}</td>
             <td>{{i.sell_price}}</td>
             <td>{{i.profit_loss}}</td>
+            <td>{{i.notes}}</td>
             <td><a href="{% url 'editTrade' i.id %}" class="btn btn-info" role="button" aria-pressed="true" >Edit</a></td>
             <td><a href="{% url 'deleteTrade' i.id %}" class="btn btn-info" role="button" aria-pressed="true">Delete</a></td>
             </tr>

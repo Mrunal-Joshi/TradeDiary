@@ -7,6 +7,8 @@
    
 
 {% block body %}
+
+{% comment %} {% include 'index.html' %} {% endcomment %}
 <link rel="stylesheet" href="{% static 'TradeStyle.css' %}"> 
      <body >   
      <div class="home one">
@@ -23,22 +25,23 @@
           <table class="table">
                <thead >
                  <tr>
-                   <th colspan= "2" style ="text-align: center">Profit and Loss Analysis</th>
+                   <th colspan= "2" style ="text-align: center">Analysis</th>
                  </tr>
                </thead>
                <tbody>
                      <tr>
-                       <td>Total Profit</td>
-                       <td class="right">3.45</td>
+                       <td>Total Investment</td>
+                       <td class="right">{{buy_price__sum}}</td>
                     </tr>
+                    
                     <tr>
-                         <td>Total Loss</td>
-                         <td class="right">23.12</td>
-                    </tr>
+                         <td>Net Profit & Loss</td>
+                         <td class="right">{{profit_loss__sum}}</td>
+                    </tr>   
                     <tr>
-                         <td>Net Profit/Loss</td>
-                         <td class="right">23.12</td>
-                    </tr>      
+                         <td>Win Rate</td>
+                         <td class="right">{{win_rate}}%</td>
+                    </tr>   
                </tbody>
           </table>
      </div>
@@ -48,7 +51,7 @@
           </p>
           </div>
      </div>
-     </body>   
+     </body>    
      <!-- TradeSheet Table-->
 
  

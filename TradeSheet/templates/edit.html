@@ -48,6 +48,12 @@
             <input type="text" class="form-control" placeholder="Sell Price" name="sell_price" value="{{trade.sell_price}}" id="sell_price">
           </div>
         </div> 
+        <div class="form-group row">   
+              <label for="notes" class="col-sm-3 col-form-label">Notes</label>
+              <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="Notes" name="notes" value="{{trade.notes}}" id="notes">
+          </div>
+        </div> 
             
             
             <button onclick="{% url 'tradesheet' %}" class="btn btn-secondary" >Close</button>   

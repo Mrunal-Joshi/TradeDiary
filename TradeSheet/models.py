@@ -10,6 +10,7 @@ class TradeSheet(models.Model):
     buy_price = models.FloatField(default=0)
     sell_price = models.FloatField(default=0)
     profit_loss = models.FloatField(default=0)
+    notes = models.TextField(default="")
 
     class Meta:
         verbose_name = ("Trading Sheet")
