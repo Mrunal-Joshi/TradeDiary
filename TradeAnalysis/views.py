@@ -30,7 +30,8 @@ def tradeAnalysis(request):
     if todays_pnl.empty:
         Analysis_data['todays_pnl']=0
     else:
-        Analysis_data['todays_pnl']=todays_pnl#todays_pnl.iloc[0]['profit_loss']
+        #print(toda)
+        Analysis_data['todays_pnl']=todays_pnl.iloc[0]['profit_loss']
 
     return render(request,'analysis.html',Analysis_data)
 

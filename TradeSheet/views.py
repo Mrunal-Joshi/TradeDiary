@@ -21,7 +21,10 @@ def displaysheet(request):
 
     else:   
         sheet = TradeSheet.objects.all().values()
-        return render(request,'tradesheet.html',{'sheet':sheet})
+        myFilter = TradeSheetFilter(request.GET,queryset=sheet)
+        sheet = myFilter.qs
+        context = {'sheet':sheet, 'myFilter':myFilter}
+        return render(request,'tradesheet.html',context)
 
 
 def editTrade(request,id):

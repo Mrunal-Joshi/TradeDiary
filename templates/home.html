@@ -7,11 +7,9 @@
    
 
 {% block body %}
-
-{% comment %} {% include 'index.html' %} {% endcomment %}
-<link rel="stylesheet" href="{% static 'TradeStyle.css' %}"> 
+<link rel="stylesheet" href="{% static 'Trade.css' %}"> 
      <body >   
-     <div class="home one">
+     {% comment %} <div class="home one">
      <p id = "pot" >Your Online</br>
     Trading Journal
      </p>    
@@ -19,41 +17,79 @@
      <div class="home two">
           <img id="tdimg" src="{% static 'TradingImage.jpg' %}" alt = "Trading Image" style="width:80%;height:400px;">
      </div>
-     <div >
-          
-          <div class = "home1 right">
-          <table class="table">
-               <thead >
-                 <tr>
-                   <th colspan= "2" style ="text-align: center">Analysis</th>
-                 </tr>
-               </thead>
-               <tbody>
-                     <tr>
-                       <td>Total Investment</td>
-                       <td class="right">{{buy_price__sum}}</td>
-                    </tr>
-                    
-                    <tr>
-                         <td>Net Profit & Loss</td>
-                         <td class="right">{{profit_loss__sum}}</td>
-                    </tr>   
-                    <tr>
-                         <td>Win Rate</td>
-                         <td class="right">{{win_rate}}%</td>
-                    </tr>   
-               </tbody>
-          </table>
-     </div>
-     <div class = "home1 left">
-          <p>The TradeDiary trading journal offers a wide variety of journaling features.
-               Use TradeDiary to work on your trading performance and also improve your trading mindset.
-          </p>
-          </div>
-     </div>
-     </body>    
-     <!-- TradeSheet Table-->
 
- 
+     <div > {% endcomment %}
+          <div id="primary" class="content-area" >
+               <main id="main" class="site-main">
+                 <div class="container">
+             <div class="vc_row wpb_row vc_row-fluid txtcenter"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+                  <div class="wpb_text_column wpb_content_element">
+                       <div class="wpb_wrapper" >
+     
+               </div>
+
+   
+                       <h1 class="h2">The Trading Diary To Boost Your Performance</h1>
+        <h2 class="p">Use TradeDiary to work on your trading performance and also improve your trading mindset.</h2>
+        
+                  </div>
+             </div>
+        
+
+        
+              </div>
+            </main>
+          </div>
+          <div class="container">
+               <div class="row">
+                    <div class=" col-lg-6 mx-auto mb-4">
+                         <div class="card">
+                              <img class="card-img-top" src="" alt="">
+     
+                              <div class="card-body">
+                                   <table class="table table-hover table-striped navbar-center" style = "width:100%" >
+                                        <thead >
+                                             <tr>
+                                               <th colspan= "2" style ="text-align:center">Your Trading Analysis</th>
+                                             </tr>
+                                           </thead>
+                                           <tbody>
+                                                 <tr>
+                                                   <td style ="text-align: left">Total Profit</td>
+                                                   <td>3.45</td>
+                                                </tr>
+                                                <tr>
+                                                     <td style ="text-align: left">Total Loss</td>
+                                                     <td>23.12</td>
+                                                </tr>
+                                                <tr>
+                                                     <td style ="text-align: left">Net Profit/Loss</td>
+                                                     <td>23.12</td>
+                                                </tr>      
+                                           </tbody>
+                                      </table>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <div id="primary" class="content-area" >
+               <main id="main" class="site-main">
+                 <div class="container">
+             <div class="vc_row wpb_row vc_row-fluid txtcenter"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+            
+           <div class="wpb_single_image wpb_content_element vc_align_center  vc_custom_1631308538489">
+                  
+                  <figure class="wpb_wrapper vc_figure">
+                       <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="2500" height="1401" src="https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in.jpg" class="vc_single_image-img attachment-full entered lazyloaded" alt="" decoding="async" title="Trade-Journal-in" data-lazy-srcset="https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in.jpg 2500w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-300x168.jpg 300w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-1024x574.jpg 1024w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-768x430.jpg 768w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-1536x861.jpg 1536w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-2048x1148.jpg 2048w" data-lazy-sizes="(max-width: 2500px) 100vw, 2500px" data-lazy-src="https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in.jpg" data-ll-status="loaded" sizes="(max-width: 2500px) 100vw, 2500px" srcset="https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in.jpg 2500w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-300x168.jpg 300w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-1024x574.jpg 1024w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-768x430.jpg 768w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-1536x861.jpg 1536w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-2048x1148.jpg 2048w"><noscript><img width="2500" height="1401" src="https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in.jpg" class="vc_single_image-img attachment-full" alt="" decoding="async" title="Trade-Journal-in" srcset="https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in.jpg 2500w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-300x168.jpg 300w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-1024x574.jpg 1024w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-768x430.jpg 768w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-1536x861.jpg 1536w, https://tradersync.com/wp-content/uploads/2021/09/Trade-Journal-in-2048x1148.jpg 2048w" sizes="(max-width: 2500px) 100vw, 2500px" /></noscript></div>
+                  </figure>
+             </div>
+        
+        
+
+        
+              </div>
+            </main>
+          </div>
      
 {% endblock body %}

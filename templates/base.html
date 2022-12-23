@@ -1,50 +1,43 @@
 {% comment %} {% extends 'base.html' %} {% endcomment %}
+{% load static %}
+   
+
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    {% block title %}
-    {% endblock title %}
-        
-    <style>
-      .navbar-nav.navbar-center {
-          position: absolute;
-          left: 50%;
-          transform: translatex(-50%);
-      }
-  </style>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">TradeDiary</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-          <div class="nav navbar-nav navbar-center">
-            <a class="nav-item nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link active" href="{% url 'tradesheet' %}">TradeSheet</a>
-            <a class="nav-item nav-link active" href="{% url 'tradeAnalysis' %}">Analysis</a>
-            <a class="nav-item nav-link active" href="{% url 'about' %}">About</a>
-          </div>
+<head>
+  <meta charset="UTF-8">
+<link rel="stylesheet" href="{% static 'Trade.css' %}"> 
+<title>TradeDiary</title>
+</head>
+<header>
+  <script src="https://kit.fontawesome.com/4f261b7f93.js" crossorigin="anonymous"></script>
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-3">
+        <h3>TRADE</h3>
+        <h3>DIARY</h3>
+      </div>
+      <div class="col col-4 col-md-9">
+        <div id="mobilemenu">
+          <a href="#"><i class="fa fa-bars"></i></a>
         </div>
-      </nav>
-  </head>
-  <body>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
-    {% block body %}
+        <div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-743" class="mbclose menu-item menu-item-type-custom menu-item-object-custom menu-item-743"><a href="#">X</a></li>
+        <li id="menu-item-6" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-6"><a href="{% url 'home' %}">Home</a></li>
+        <li id="menu-item-7" class="menu menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="{% url 'tradesheet' %}">TradeSheet</a></li>
+        <li id="menu-item-480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-480"><a href="{% url 'tradeAnalysis' %}">Analysis</a></li>
+        <li id="menu-item-3398" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3398"><a href="{% url 'about' %}">About</a></li>
+        <li id="menu-item-1119" class="signup menu-item menu-item-type-custom menu-item-object-custom menu-item-1119"><a href="">Sign up</a></li>
+        <li id="menu-item-11" class="login menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="">Log in</a></li>
+        </div>	  
+      </div>
+    </div>
+  </div>
+</header>
+  {% block body %}
         
     {% endblock body %}
-        
+    <!-- This is where the footer begins -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

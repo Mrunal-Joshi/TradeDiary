@@ -8,7 +8,8 @@
 
 {% block body %}
 <br><br>
-
+{% load static %}
+<link rel="stylesheet" href="{% static 'Trade.css' %}">
 {% comment %} <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button>
@@ -96,19 +97,36 @@
     <div class="col">
       <input type="text" class="form-control" placeholder="Notes" name="notes">
     </div>
-    <button type="submit" class="btn btn-primary">Add Trade</button>
+    <button type="submit" class="btn btn-info">Add Trade</button>
   </div>
   
 </form> 
 
 <br><br>
 
+<div class="row">
+  <div class="col">
+        
+        <div>
+        <form method="get" class="form-inline justify-content-center"> 
+        {{myFilter.form}} 
+        <button type="submit" class="btn btn-info">Search</button>
+        {% if myFilter.is_bound %}
+        <a href="{% url 'tradesheet' %}" class="btn btn-info m-1" role="button">Clear filters</a>
+        
+        {% endif %}                   
+        </form> 
+        <br>
+    </div>
+    
+  </div>
+</div>
+
 
 <!-- TradeSheet Table-->
 <table class="table table-hover table-striped navbar-center" style = "width: 95%;">
-    <thead class="table-dark">
+    <thead>
       <tr>
-      
         <th scope="col">Date</th>
         <th scope="col">Name/Symbol</th>
         <th scope="col">Quantity</th>
@@ -121,7 +139,7 @@
       </tr>
     </thead>
 
-    <tbody class="table-light">
+    <tbody>
         {% for i in sheet %}
           
             <tr>
