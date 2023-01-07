@@ -23,13 +23,23 @@
           <a href="#"><i class="fa fa-bars"></i></a>
         </div>
         <div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-743" class="mbclose menu-item menu-item-type-custom menu-item-object-custom menu-item-743"><a href="#">X</a></li>
-        <li id="menu-item-6" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-6"><a href="{% url 'home' %}">Home</a></li>
-        <li id="menu-item-7" class="menu menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="{% url 'tradesheet' %}">TradeSheet</a></li>
-        <li id="menu-item-480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-480"><a href="{% url 'tradeAnalysis' %}">Analysis</a></li>
+        <li id="menu-item-6" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-6"><a href="{% url 'home' %}">Home</a></li>        
         <li id="menu-item-3398" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3398"><a href="{% url 'about' %}">About</a></li>
-        <li id="menu-item-1119" class="signup menu-item menu-item-type-custom menu-item-object-custom menu-item-1119"><a href="">Sign up</a></li>
-        <li id="menu-item-11" class="login menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="">Log in</a></li>
-        </div>	  
+        {% if user.is_authenticated %}
+          
+          <li id="menu-item-7" class="menu menu-item menu-item-type-custom menu-item-object-custom menu-item-7"><a href="{% url 'tradesheet' %}">TradeSheet</a></li>
+          <li id="menu-item-480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-480"><a href="{% url 'tradeAnalysis' %}">Analysis</a></li>
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <li> {{user.id}}{{user.first_name}}</li>
+          
+          <li id="menu-item-1119" class="signup menu-item menu-item-type-custom menu-item-object-custom menu-item-1119"><a href="{% url 'logout'%}">Logout</a></li>
+       
+        {%else%}
+        <li id="menu-item-1119" class="signup menu-item menu-item-type-custom menu-item-object-custom menu-item-1119"><a href="{% url 'register'%}">Sign up</a></li>
+        <li id="menu-item-11" class="login menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a href="{% url 'login'%}">Log in</a></li>
+        {%endif%}
+      
+      </div>	  
       </div>
     </div>
   </div>

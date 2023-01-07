@@ -6,9 +6,10 @@ import pandas as pd
 from .graphs import *
 from django.db.models import *
 import datetime
-
+from django.contrib.auth.decorators import login_required 
 # Create your views here.
 
+@login_required
 def tradeAnalysis(request):
     sheet=TradeSheet.objects.all().values()
 

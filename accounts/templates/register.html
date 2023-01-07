@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>TradeDiary-Register</title> 
+{% endblock title %}
+
+{% block body %}
+  <div class="mask d-flex align-items-center h-80 gradient-custom-3">
+    <div class="container h-80">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2> 
+
+              <form action="register"  method="post">
+                {% csrf_token %}
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="first_name" class="form-control form-control-lg" name="first_name" placeholder="First Name"/>
+        
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="text" id="last_name" class="form-control form-control-lg" name="last_name" placeholder="Last Name"/>
+          
+                  </div>
+                <div class="form-outline mb-4">
+                  <input type="email" id="email" class="form-control form-control-lg" name="email" placeholder="Your Email" />
+                  {% comment %} <label class="form-label" for="form3Example3cg">Your Email</label> {% endcomment %}
+                </div>
+                
+                <div class="form-outline mb-4">
+                    <input type="test" id="username" class="form-control form-control-lg" name="username" placeholder="Username" />
+                    {% comment %} <label class="form-label" for="form3Example3cg">Your Email</label> {% endcomment %}
+                  </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="password1" class="form-control form-control-lg"  name="password1" placeholder="Password"/>
+                  {% comment %} <label class="form-label" for="form3Example4cg">Password</label> {% endcomment %}
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="password2" class="form-control form-control-lg" name="password2" placeholder="Repeat your password"/>
+                  {% comment %} <label class="form-label" for="form3Example4cdg">Repeat your password</label> {% endcomment %}
+                </div>
+
+                {% comment %} <div class="form-check">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg"/>
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div> {% endcomment %}
+                
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+                <br><br>
+                <div>
+
+                  {% for message in messages %}
+                      <h6>{{message}}</h6>
+                  {% endfor %}
+                  </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+{% endblock body %}

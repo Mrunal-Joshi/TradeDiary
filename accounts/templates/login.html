@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>TradeDiary-Login</title> 
+{% endblock title %}
+
+{% block body %}
+  <div class="mask d-flex align-items-center h-80 gradient-custom-3">
+    <div class="container h-80">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">User Login</h2> 
+
+              <form action="login"  method="post">
+                {% csrf_token %}
+
+                
+                <div class="form-outline mb-4">
+                    <input type="test" id="username" class="form-control form-control-lg" name="username" placeholder="Username" />
+                    {% comment %} <label class="form-label" for="form3Example3cg">Your Email</label> {% endcomment %}
+                  </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="password" class="form-control form-control-lg"  name="password" placeholder="Password"/>
+                  {% comment %} <label class="form-label" for="form3Example4cg">Password</label> {% endcomment %}
+                </div>
+
+            
+                
+                <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                </div>
+                <div>
+                  <br><br>
+                {% for message in messages %}
+                    <h6>{{message}}</h6>
+                {% endfor %}
+                </div>
+                
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+{% endblock body %}

@@ -4,7 +4,10 @@ from .models import TradeSheet
 from .forms import TradeSheetForm
 from django.contrib import messages
 from .filters import TradeSheetFilter
+from django.contrib.auth.decorators import login_required 
 
+
+@login_required
 def displaysheet(request):
     
     if request.method == "POST":
@@ -26,7 +29,7 @@ def displaysheet(request):
         context = {'sheet':sheet, 'myFilter':myFilter}
         return render(request,'tradesheet.html',context)
 
-
+@login_required
 def editTrade(request,id):
     if request.method == "POST":
         sheet = TradeSheet.objects.get(id=id)
@@ -44,6 +47,7 @@ def editTrade(request,id):
         sheet = TradeSheet.objects.get(id=id)
         return render(request,'edit.html',{'trade':sheet})
 
+@login_required
 def deleteTrade(request,id):
     TradeSheet.objects.filter(id=id).delete()
     sheet = TradeSheet.objects.all().values()

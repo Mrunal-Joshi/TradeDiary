@@ -22,6 +22,6 @@ urlpatterns = [
     path('',views.home,name="home"),
     path('tradesheet/',include('TradeSheet.urls')),
     path('analysis/',include('TradeAnalysis.urls')),
-
+    path('accounts/',include('accounts.urls')),
     path('about/',views.about,name="about"),
 ]
