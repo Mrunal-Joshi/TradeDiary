@@ -7,6 +7,7 @@ from .filters import TradeSheetFilter
 from django.contrib.auth.decorators import login_required 
 
 
+
 @login_required
 def displaysheet(request):
     
@@ -14,16 +15,21 @@ def displaysheet(request):
         form = TradeSheetForm(request.POST or None)
         
         if form.is_valid():           
-            form.save()
-            messages.success(request, ("Trade Added!s"))
+            obj=form.save(commit=False)
+            obj.user=request.user
+            obj.save()
+            #response.user.tradesheet.add(form)  # adds the trade to the current logged in user
+            messages.success(request, ("Trade Added!"))
         else:
             for field in form:
                 print("Field Error:", field.name,  field.errors)
 
         return redirect('tradesheet')
 
-    else:   
-        sheet = TradeSheet.objects.all().values()
+    else:
+        current_user=request.user   
+        sheet = TradeSheet.objects.filter(user=current_user).values()
+        #sheet = TradeSheet.objects.all().values()
         myFilter = TradeSheetFilter(request.GET,queryset=sheet)
         sheet = myFilter.qs
         context = {'sheet':sheet, 'myFilter':myFilter}

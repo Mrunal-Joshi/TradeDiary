@@ -1,9 +1,11 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
 # Create your models here.
 
-class TradeSheet(models.Model):   
 
+class TradeSheet(models.Model):   
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="tradesheet", null=True)
     date = models.DateField(auto_now=False, auto_now_add=False,blank=True,default=datetime.now)
     symbol = models.CharField(max_length=8)
     no_of_shares = models.IntegerField(default=0)

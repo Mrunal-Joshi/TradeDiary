@@ -11,8 +11,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def tradeAnalysis(request):
-    sheet=TradeSheet.objects.all().values()
-
+    # sheet=TradeSheet.objects.all().values()
+    current_user=request.user   
+    sheet = TradeSheet.objects.filter(user=current_user).values()
     ## Graphs 
     df = pd.DataFrame(sheet)
     Analysis_data = {'pie_chart':pie_chart(df),'line_chart':line_chart(df),'win_by_day':chart_win_by_day(df),'win_by_trade':chart_win_by_trade(df)}
