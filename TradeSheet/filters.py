@@ -13,4 +13,4 @@ class TradeSheetFilter(django_filters.FilterSet):
     class Meta:
         model = TradeSheet
         fields = '__all__'
-        exclude = ['no_of_shares','profit_loss','symbol','date','buy_price','sell_price','notes']
+        exclude = ['user','no_of_shares','profit_loss','symbol','date','buy_price','sell_price','notes']

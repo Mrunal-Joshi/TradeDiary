@@ -36,8 +36,8 @@ def chart_win_by_day(df):
     df['Category']="Loss"
     df.loc[df['profit_loss']>0, 'Category']="Profit"
     print(df)
-    df_win_day=df.groupby(['date'],as_index=False)['Category'].apply(lambda x: x.eq("Profit").count().astype(int))
-    print(df_win_day)
+    df_win_day=df.groupby(['date'],as_index=False)['Category'].apply((lambda x: x.eq("Profit").count().astype(int)))
+    print("+++++++++++",df_win_day)
     pie_chart = px.scatter( df_win_day, y='Category', x='date')
     pie_chart=pie_chart.to_html()
     return pie_chart

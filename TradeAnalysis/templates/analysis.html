@@ -113,8 +113,38 @@
                               </div>
                           </div>
                       </div>
-
-                      
+                      <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Total Profit</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{total_profit}}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Total Loss</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{total_loss}}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   </div>
 
 
@@ -122,6 +152,8 @@
                   <!-- Content Row -->
 
                   <div class="row">
+
+                    
 
                       <!-- Area Chart -->
                       <div class="col-xl-6 col-lg-5">
@@ -138,47 +170,8 @@
                               </div>
                           </div>
                       </div>
-
-                      <!-- Pie Chart -->
-                 
-
-                      <div class="col-xl-6 col-lg-5">
-
-                          {% comment %} <div class="card shadow mb-4">                           
-                              <div
-                                  class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                  <h6 class="m-0 font-weight-bold text-primary">Winning % by trades</h6>
-                                  
-                              </div>
-                              <!-- Card Body -->
-                              <div class="card-body">
-                                {{win_by_trade | safe}} 
-                              </div>
-                              
-                          </div> {% endcomment %}
-
-                      {% comment %} </div> 
-                      <div class="col-xl-6 col-lg-2"> {% endcomment %}
-                        <div class="card shadow mb-4">
-                            <!-- Card Header - Dropdown -->
-                            <div
-                                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h5 class="m-0 font-weight-bold text-info">Winning % by days</h5>
-                                
-                            </div>
-                            <!-- Card Body -->
-                            <div class="card-body">
-                                {{win_by_day | safe}} 
-                            </div>
-                        </div> 
-                    </div> 
-
                   
-                  </div> <!--   outer div-->
-
-                 
-                  <div class="row">
-                     <!-- Line Chart -->
+                         <!-- Line Chart -->
                      <div class="col-xl-6 col-lg-2">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
@@ -193,6 +186,27 @@
                             </div>
                         </div>
                     </div>
+                  </div> <!--   outer div-->
+
+                 
+                  <div class="row">
+
+                    <div class="col-xl-6 col-lg-5">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div
+                                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h5 class="m-0 font-weight-bold text-info">Winning % by days</h5>
+                                
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                {{win_by_day | safe}} 
+                            </div>
+                        </div> 
+                    </div> 
+
+                    
                   </div>
 
 
