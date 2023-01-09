@@ -23,21 +23,19 @@ def chart_win_by_trade(df):
 def chart_win_by_day(df):
     ## group by days -- wins VS losses
     test=df.groupby(['date'],as_index=False)['profit_loss'].sum()
-    print(test)
-    # print(df_win_day)
-    # df_lose_day=test.loc[test['profit_loss']<0,['date','profit_loss']]
-    # print(df_lose_day)
-
-    # df_date_count=df.groupby(['date'],as_index=False)['profit_loss'].count()
-    # print(df_date_count)
-    # df_win_count=df.groupby(['date'],as_index=False).filter(lambda pnl : pnl.profit_loss>0)
-    # print(df_win_count)
+   
 
     df['Category']="Loss"
     df.loc[df['profit_loss']>0, 'Category']="Profit"
-    print(df)
-    df_win_day=df.groupby(['date'],as_index=False)['Category'].apply((lambda x: x.eq("Profit").count().astype(int)))
-    print("+++++++++++",df_win_day)
+    df_win_day=df.groupby(['date'],as_index=False)['Category'].apply((lambda x: x.eq("Profit").count()))
     pie_chart = px.scatter( df_win_day, y='Category', x='date')
     pie_chart=pie_chart.to_html()
     return pie_chart
+
+def chart_profit_loss_per_share(df):    
+    fig = px.histogram(df, x="symbol", y="profit_loss",
+            color="Category",
+             barmode='group',
+             height=400)
+    fig_chart=fig.to_html()
+    return fig_chart
